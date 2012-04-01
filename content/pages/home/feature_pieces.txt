@@ -1,0 +1,3 @@
+### Break Content into Pieces
+
+Break page content up into multiple files that can be arbitrarily combined. It makes complex templates easy to pull-off.

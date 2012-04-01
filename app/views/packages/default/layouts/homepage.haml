@@ -1,0 +1,27 @@
+!!! Strict
+%html
+  %head
+    %title= [@title, "Ramble Sample Blog"].compact.join(" | ")
+
+    = stylesheet_link_tag "#{pkg_path}/bootstrap", "#{pkg_path}/bootstrap-responsive"
+    = javascript_include_tag 'jquery', "#{pkg_path}/bootstrap"
+    = yield_content :include
+  %body
+    = render "#{pkg_path}/shared/_header"
+    %section#main
+      .container
+        - if defined? @page
+          .row
+            .span12
+              .hero-unit
+                %h1= @page.setting_for :title
+                %p= @page.setting_for :description
+                %p.pull-right= link_to "Take the tour", "#", class: "btn btn-primary btn-large"
+          .row
+            .span4
+              = @page.content_for(:feature_markdown)
+            .span4
+              = @page.content_for(:feature_pieces)
+            .span4
+              = @page.content_for(:feature_git)
+    = render "#{pkg_path}/shared/_footer"

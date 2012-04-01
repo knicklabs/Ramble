@@ -10,26 +10,14 @@ Ramble.controllers :posts do
   
   # Index reads all blog posts from disk.
   get :index, map: "blog" do
-    files = Dir.glob("content/posts/*.txt")
-    @posts = []
-    
-    files.to_a.each do |file|
-      @posts.push Post.new({file: file})
-    end
+    @posts = fetch_posts
     
     render 'posts/index'
   end
   
   # Reads a single blog post from disk.
   get :blog, map: "blog", with: [:date, :title] do
-    files = Dir.glob("content/posts/#{params[:date]}_#{params[:title]}.txt")
-    posts = []
-    
-    files.to_a.each do |file|
-      posts.push Post.new({file: file})
-    end
-
-    @post = posts[0] || nil
+    @post = fetch_post(params[:date].downcase, params[:title].downcase)
     
     render 'posts/show'
   end  

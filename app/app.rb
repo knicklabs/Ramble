@@ -16,29 +16,12 @@ class Ramble < Padrino::Application
     if home.downcase == "blog"
       redirect url(:posts, :index)
     else
-      directories = Dir.glob("content/pages/#{home}").select { |f| File.directory? f }
-      pages = []
+      @page = fetch_page(home)
       
-      directories.to_a.each do |directory|
-        pages.push Page.new({directory: directory})
-      end
+      view = "packages/" << @settings["package"] << "/pages/show"
+      layout = "packages/" << @settings["package"] << "/layouts/" << (@page.setting_for("layout") || "application")
       
-      @page = pages[0] || nil
-      
-      render 'pages/show', layout: @page.setting_for(:layout) || "application"
+      render view, layout: layout
     end
-  end
-  
-  get :index, with: :title do
-    directories = Dir.glob("content/pages/#{params[:title].downcase}").select { |f| File.directory? f }
-    pages = []
-    
-    directories.to_a.each do |directory|
-      pages.push Page.new({directory: directory})
-    end
-    
-    @page = pages[0] || nil
-    
-    render 'pages/show', layout: @page.setting_for(:layout) || "application"
   end
 end

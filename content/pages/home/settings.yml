@@ -1,2 +1,6 @@
-title: Home
+menu_title: Home
+title: Introducing Ramble...
+description: >
+  Forget about complicated content management systems. Ramble lets you publish web content
+  using your favourite text editor and a couple of git commands.
 layout: homepage

@@ -1,0 +1,7 @@
+%article.page.full
+  .page-header
+    %h1= @page.setting_for(:title)
+    
+  .row
+    .span12
+      = @page.content_for(:content)

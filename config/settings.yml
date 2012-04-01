@@ -1,6 +1,7 @@
 site:
-  title: "Ramble CMS"
+  title: "Ramble"
 author:
   name: "Ramble"
   twitter: "@ramble"
 homepage: "home"
+package: "default"

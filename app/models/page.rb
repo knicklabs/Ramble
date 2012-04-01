@@ -1,11 +1,14 @@
 require 'kramdown'
 
 class Page
-  attr_accessor :directory, :title
+  attr_accessor :directory, :filename, :title, :menu_title
   
   def initialize(options = {})
     @directory = options[:directory] unless options[:directory].blank?
     @settings = YAML::load(File.read("#{@directory}/settings.yml"))
+    @title = setting_for(:title) || @directory.humanize
+    @filename = File.basename(@directory)
+    @menu_title = setting_for(:menu_title) || setting_for(:title) || @filename.humanize
   end
   
   def setting_for(key)

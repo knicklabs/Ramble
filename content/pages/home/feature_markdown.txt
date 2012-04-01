@@ -1,0 +1,3 @@
+### Write with Markdown
+
+Write your content in a human-readable, simple syntax and forget about writing in messy, error prone HTML.
