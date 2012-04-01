@@ -1,0 +1,4 @@
+### About Ramble
+
+Ramble is a quick, easy, and flexible way to build websites and blogs. Write your content as text files in your favourite editor, drop them in the content folder, and then push your changes to your server. That's all it takes.
+

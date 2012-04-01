@@ -1,0 +1,10 @@
+!!! Strict
+%html
+  %head
+    %title= [@title, "Ramble Sample Blog"].compact.join(" | ")
+
+    = stylesheet_link_tag 'reset', 'application'
+    = javascript_include_tag 'jquery', 'application'
+    = yield_content :include
+  %body
+    = yield
