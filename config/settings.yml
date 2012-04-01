@@ -3,3 +3,5 @@ site:
 author:
   name: "Ramble"
   twitter: "@ramble"
+blog:
+  route: "blog"

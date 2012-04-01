@@ -1,14 +1,19 @@
 GEM
   remote: http://rubygems.org/
   specs:
+    activemodel (3.2.3)
+      activesupport (= 3.2.3)
+      builder (~> 3.0.0)
     activesupport (3.2.3)
       i18n (~> 0.6)
       multi_json (~> 1.0)
+    builder (3.0.0)
     haml (3.1.4)
     http_router (0.10.2)
       rack (>= 1.0.0)
       url_mount (~> 0.2.1)
     i18n (0.6.0)
+    kramdown (0.13.5)
     mail (2.3.3)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
@@ -74,7 +79,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activemodel
   haml
+  kramdown
   mocha
   padrino (= 0.10.6)
   rack-test

@@ -5,6 +5,14 @@ class Ramble < Padrino::Application
   register Padrino::Helpers
 
   enable :sessions
+  
+  before do
+    @settings = YAML::load(File.read('config/settings.yml'))
+  end
+  
+  get :index do
+    "Home Page"
+  end
 
   ##
   # Caching support

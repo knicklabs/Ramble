@@ -7,6 +7,8 @@ source :rubygems
 # Project requirements
 gem 'rake'
 gem 'sinatra-flash', :require => 'sinatra/flash'
+gem 'activemodel'
+gem 'kramdown'
 
 # Component requirements
 gem 'sass'
