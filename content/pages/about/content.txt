@@ -1,4 +1,44 @@
-### About Ramble
+### What is it?
 
-Ramble is a quick, easy, and flexible way to build websites and blogs. Write your content as text files in your favourite editor, drop them in the content folder, and then push your changes to your server. That's all it takes.
+Ramble is not your typical content management system. It does not use databases; it has no control panel; and it has no user management to speak of.
+
+Ramble is a dynamic, file-based, blog-aware, website generator. You create and edit your content by editing text files. You write markdown and your visitors HTML. It is simple and it is fun. 
+
+Ramble lets you do it all from your favourite text editor!  
+
+### How does it work?
+
+The developers guide, which is coming soon, will take you through all the nuts and bolts. Here is a high level overview.
+
+Ramble basically works by scanning directories for content using patterns present in routes. When it finds the content it is looking for on the file system, it converts it to HTML and pulls it into a template. 
+
+The really cool thing about Ramble is that content can be included in templates in an arbitrary manner, making it easy to create complex layouts.
+
+### How much does it cost?
+
+Nothing. Ramble is open source and released under the MIT license. You are free to use it in personal, commercial and educational endeavours.
+
+Be aware that this project is in its infancy. Version 0.1 was literally created in a day. There is still much work ahead.
+
+### What's lies ahead?
+
+A goal of this project is to build a system for quickly creating websites in a dynamic and arbitrary manner, freeing designers and developers from following complex theme development rules in favour of setting their own. It's getting there.
+
+Another goal of this project is to create a pre-compiler, that will package up your content as a static website, eliminating the need for a server capable running Ruby, Rack, etc and allowing you to publish your website to places like Github pages.
+
+### How do I get started?
+
+1. gem install sinatra
+2. gem install padrino
+3. Clone the project. The source code is available at https://github.com/knicklabs/Ramble/.
+4. bundle install
+5. padrino start
+
+After following the above instructions, you will see this website if you browse to http://localhost:3000. 
+
+* Settings are located in /config/settings.yml
+* Content is located in /content/
+* Templates are located in /app/views/packages/
+ 
+
 
