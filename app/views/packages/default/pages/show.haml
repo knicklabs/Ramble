@@ -3,5 +3,7 @@
     %h1= @page.setting_for(:title)
     
   .row
-    .span12
+    .span8
       = @page.content_for(:content)
+    .span4
+      = @page.content_for(:sidebar)

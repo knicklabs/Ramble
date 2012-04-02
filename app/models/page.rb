@@ -16,11 +16,13 @@ class Page
   end
   
   def content_for(key)
-    file = File.open("#{@directory}/#{key.to_s}.txt")
-    content = ""
-    file.each { |line| content << line }
-    file.close unless file.closed?
-    
+    content  = ""
+    filename = "#{@directory}/#{key.to_s}.txt"
+    if File.exists? filename
+      file = File.open(filename)
+      file.each { |line| content << line }
+      file.close unless file.closed?
+    end
     Kramdown::Document.new(content).to_html
   end
 end
