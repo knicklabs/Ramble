@@ -1,0 +1,5 @@
+### Looking for the code?
+
+You can find the source code for Ramble on [Github](https://github.com/knicklabs/ramble). You
+can download the source. If you improve upon, it would be awesome if you shared back to the project
+by submitting a pull request. 

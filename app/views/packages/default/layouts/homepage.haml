@@ -16,7 +16,7 @@
               .hero-unit
                 %h1= @page.setting_for :title
                 %p= @page.setting_for :description
-                %p.pull-right= link_to "Take the tour", "#", class: "btn btn-primary btn-large"
+                %p.pull-right= link_to "Learn more", url_for(:pages, :index, id: "about"), class: "btn btn-primary btn-large"
           .row
             .span4
               = @page.content_for(:feature_markdown)
