@@ -22,15 +22,20 @@ Ramble.helpers do
     pages
   end
   
-  def navigation
+  def navigation(options = {})
     pages = fetch_pages
+    settings = YAML::load(File.read('config/settings.yml'))
+    homepage_filename = settings["homepage"].downcase
+    hide_homepage = options[:hide_homepage] || false
     
     html  =  '<nav>'
     html  << '<ul class="nav">'
     pages.each do |page|
-      html << '<li>'
-      html << '<a href="' << url_for(:pages, :index, id: page.filename) << '">' << page.menu_title << '</a>'
-      html << '</li>'  
+      unless hide_homepage and page.filename.downcase == homepage_filename.downcase
+        html << '<li>'
+        html << '<a href="' << url_for(:pages, :index, id: page.filename) << '">' << page.menu_title << '</a>'
+        html << '</li>'  
+      end
     end
     html << '</ul>'
     html << '</nav>'
