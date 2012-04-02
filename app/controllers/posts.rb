@@ -12,13 +12,18 @@ Ramble.controllers :posts do
   get :index, map: "blog" do
     @posts = fetch_posts
     
-    render 'posts/index'
+    view   = "packages/" << @settings["package"] << "/posts/index"
+    layout = "packages/" << @settings["package"] << "/layouts/" << "application"  
+    
+    render view, layout: layout
   end
   
   # Reads a single blog post from disk.
-  get :blog, map: "blog", with: [:date, :title] do
+  get :index, map: "blog", with: [:date, :title] do
     @post = fetch_post(params[:date].downcase, params[:title].downcase)
+    view   = "packages/" << @settings["package"] << "/posts/show"
+    layout = "packages/" << @settings["package"] << "/layouts/" << "application"  
     
-    render 'posts/show'
+    render view, layout: layout
   end  
 end

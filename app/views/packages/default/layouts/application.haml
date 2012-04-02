@@ -1,10 +1,14 @@
 !!! Strict
 %html
   %head
-    %title= [@title, "Ramble Sample Blog"].compact.join(" | ")
+    %title= [@title, "Ramble"].compact.join(" | ")
 
-    = stylesheet_link_tag 'reset', 'application'
-    = javascript_include_tag 'jquery', 'application'
+    = stylesheet_link_tag "#{pkg_path}/bootstrap", "#{pkg_path}/bootstrap-responsive", "#{pkg_path}/application"
+    = javascript_include_tag 'jquery', "#{pkg_path}/bootstrap"
     = yield_content :include
   %body
-    = yield
+    = render "#{pkg_path}/shared/_header"
+    %section#main
+      .container
+        = yield
+    = render "#{pkg_path}/shared/_footer"

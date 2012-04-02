@@ -7,3 +7,6 @@
             .container
               = link_to "#{site_title}", url_for(:index), class: "brand"
               = navigation({hide_homepage: true})
+              %nav.pull-right 
+                %ul.nav
+                  %li= link_to "Blog", url_for(:posts, :index) 

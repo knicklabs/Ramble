@@ -1,7 +1,7 @@
 require 'kramdown'
 
 class Post
-  attr_accessor :file, :title, :created_at
+  attr_accessor :file, :title, :id, :created_at
   
   def initialize(options = {})
     @file = options[:file] unless options[:file].blank?
@@ -23,6 +23,7 @@ class Post
   def hydrate
     basename = File.basename(@file)
     
+    @id = (basename.split("_")[1]).sub('.txt', '')
     @title = (basename.split("_")[1]).gsub('-', ' ').sub('.txt', '')
     @created_at = basename.split("_")[0]
   end

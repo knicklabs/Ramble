@@ -2,7 +2,7 @@
 
 Ramble is not your typical content management system. It does not use databases; it has no control panel; and it has no user management to speak of.
 
-Ramble is a dynamic, file-based, blog-aware, website generator. You create and edit your content by editing text files. You write markdown and your visitors HTML. It is simple and it is fun. 
+Ramble is a dynamic, file-based, blog-aware, website generator. You create and edit your content by editing text files. You write markdown and your visitors see HTML. It is simple and it is fun. 
 
 Ramble lets you do it all from your favourite text editor!  
 
@@ -10,7 +10,7 @@ Ramble lets you do it all from your favourite text editor!
 
 The developers guide, which is coming soon, will take you through all the nuts and bolts. Here is a high level overview.
 
-Ramble basically works by scanning directories for content using patterns present in routes. When it finds the content it is looking for on the file system, it converts it to HTML and pulls it into a template. 
+Ramble works by scanning directories for content using patterns present in routes. When it finds the content it is looking for on the file system, it converts it to HTML and pulls it into a template. 
 
 The really cool thing about Ramble is that content can be included in templates in an arbitrary manner, making it easy to create complex layouts.
 
@@ -24,7 +24,7 @@ Be aware that this project is in its infancy. Version 0.1 was literally created 
 
 A goal of this project is to build a system for quickly creating websites in a dynamic and arbitrary manner, freeing designers and developers from following complex theme development rules in favour of setting their own. It's getting there.
 
-Another goal of this project is to create a pre-compiler, that will package up your content as a static website, eliminating the need for a server capable running Ruby, Rack, etc and allowing you to publish your website to places like Github pages.
+Another goal of this project is to create a pre-compiler that will package up your content as a static website. This will allow you to push anywhere you can run plain HTML files, such as Github pages. 
 
 ### How do I get started?
 

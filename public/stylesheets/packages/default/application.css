@@ -11,3 +11,12 @@ footer .container .row {
 footer .container .row p {
   margin-left: -20px;
 }
+
+ul.posts {
+  list-style: none;
+}
+
+ul.posts li {
+  list-style: none;
+  margin-bottom: 20px;
+}

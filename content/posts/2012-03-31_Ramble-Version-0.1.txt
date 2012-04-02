@@ -1,0 +1,9 @@
+I am pleased to announce the release of Ramble Version 0.1. This version sees the introduction of the product with the following features:
+
+* General site settings, such as title and theme
+* Dynamic loading of page content
+* Dynamic loading of blog content
+* Content parsed as markdown and converted to HTML
+* A few helper functions for common needs, such as producing navigation for pages
+
+More features will be added shortly. Next up on the list is 404 pages.

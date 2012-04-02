@@ -1,2 +1,10 @@
-- @posts.each do |post|
-%li= post.title
+.row
+  .span8
+    %ul.posts
+      - @posts.each do |post|
+        %li
+          %article.post
+            %a{href: "#{url_for(:posts, :index)}/#{post.created_at}/#{post.id}" }
+              %hgroup
+                %h4= post.title
+                %h5= "Posted on #{post.created_at}"
